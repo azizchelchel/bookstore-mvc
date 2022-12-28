@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src=''></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <%- include('header/menu.ejs')%>
+
+    <h2>hello employee  page</h2> 
+
+    <% for (let i=0; i<employee.length; i++) {%>
+    <h1>Name : <%= employee[i].name  %></h1>
+    <h3>position : <%= employee[i].position  %></h3>
+    <h3>experience : <%= employee[i].experience  %></h3>
+    <%  if (employee[i].isContractor===true){%>
+        <h2>you are a contractor</h2>
+        <h2>you have not full benefit</h2>
+    <%}  else {%>
+        <h2>you are not a contractor</h2>
+        <h2>you have full benefit</h2>
+        <%}%>
+    <h3>skills : <%= employee[i].skills  %></h3>
+    <br/>
+<%}%>
+
+</body>
+</html>
